@@ -1,6 +1,6 @@
 'use strict';
 
-const rtsp = reqiure('rtsp');
+const rtsp = require('rtsp');
 
 module.exports = (client) => {
     let req = client.req;
