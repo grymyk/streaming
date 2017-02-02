@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "engines": {
     "node": "7.4.0",
-    "npm": "4.0.5" 
+    "npm": "4.0.5"
   },
   "description": "streaming",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "license": "ISC",
   "scripts": {
     "start": "node index.js"
+  },
+  "dependencies": {
+    "node-rtsp-stream": "0.0.3"
   }
 }

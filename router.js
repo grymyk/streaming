@@ -1,6 +1,6 @@
 'use strict';
 
-api.fs = require('fs');
+const rtsp = reqiure('rtsp');
 
 module.exports = (client) => {
     let req = client.req;
@@ -14,6 +14,8 @@ module.exports = (client) => {
             });
 
             let ip = req.connection.remoteAddress;
+
+            rtsp();
 
             res.write('<h1>Welcome!</h1>Your IP: ' + ip);
             res.end();
