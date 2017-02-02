@@ -5,7 +5,7 @@ global.api = {};
 let http = require('http');
 let config = require('./config.js');
 
-const PORT = config.port;
+const PORT = process.env.PORT || config.port;
 
 let server = new http.Server();
 
