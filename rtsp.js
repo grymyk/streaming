@@ -8,5 +8,5 @@ let options = {
     wsPort: 9999
 };
 
-module.exports = new apl.Stream(options);
+module.exports = new api.Stream(options);
 
