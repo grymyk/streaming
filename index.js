@@ -3,7 +3,7 @@
 global.api = {};
 
 let http = require('http');
-let config = require('./config.js');
+const config = require('./config.js');
 
 const PORT = process.env.PORT || config.port;
 
