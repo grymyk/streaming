@@ -3,15 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>rtsp</title>
+	<script src="jsmpeg.min.js"></script>
 </head>
 <body>
     <h1>Streaming</h1>
-    <canvas></canvas>
+    <canvas id="video"></canvas>
     <script>
-        client = new Websocket('ws://localhost:9999/');
-        player = new jsmpeg(client, {
-                canvas: canvas
-        });
+        let url = 'ws://localhost:9999/';
+        let canvas = document.getElementById('video');
+
+        let player = new JSMpeg.Player(
+            url, {canvas: canvas}
+        );
     </script>
 </body>
 </html>

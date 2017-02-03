@@ -15,7 +15,7 @@ module.exports = (client) => {
 
             let ip = req.connection.remoteAddress;
 
-            rtsp();
+            //rtsp();
 
             res.write('<h1>Welcome!</h1>Your IP: ' + ip);
             res.end();
