@@ -1,2 +1,2 @@
-web: node index.js
+web: bin/start-nginx bundle exec node index.js
 
