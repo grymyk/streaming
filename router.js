@@ -17,7 +17,7 @@ module.exports = (client) => {
 
             //rtsp();
 
-            res.write('<h1>Welcome!</h1>Your IP: ' + ip);
+            res.write('<h1>Welcome to The Club!</h1>Your IP: ' + ip);
             res.end();
         }
     } else {
