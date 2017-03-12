@@ -37,7 +37,7 @@ http {
     server {
         listen <%= ENV["PORT"] %>;
         server_name _;
-        #server_name potik.herokuapp.com;
+        #server_name wsee.herokuapp.com;
 
         location / {
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -62,7 +62,7 @@ http {
 
             add_header Cache-Control no-cache;
 
-            add_header 'Access-Control-Allow-Origin' '*' always;
+            add_header 'Access-Control-Allow-Origin' 'https://client-hls.herokuapp.com';
             add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
             add_header 'Access-Control-Allow-Headers' 'Range';
             
@@ -101,8 +101,8 @@ rtmp {
 
         application myapp {
             live on;
-           
-            exec_static /usr/bin/ffmpeg -rtsp_transport tcp -i rtsp://mpv.cdn3.bigCDN.com:554/bigCDN/definst/mp4:bigbuckbunnyiphone_400.mp4 -vcodec copy -f flv -r 25 -s 1920x1080 -an "rtmp://potik.herokuapp.com/myapp/camera";
+
+            exec_static /usr/bin/ffmpeg -i rtmp://54.255.176.172/trans/nnstate_160p -vcodec libx264 -vprofile baseline -acodec aac -strict -2 -f flv "rtmp://192.168.1.206/myapp/camera";
 
            #exec_static /usr/bin/ffmpeg -rtsp_transport tcp -i rtsp://mpv.cdn3.bigCDN.com:554/bigCDN/definst/mp4:bigbuckbunnyiphone_400.mp4 -vcodec copy -f flv -r 25 -s 1920x1080 -an "rtmp://192.168.1.206/myapp/camera";
            
